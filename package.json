@@ -2,7 +2,6 @@
   "name": "apisheroku",
   "version": "0.0.0",
   "private": true,
-
   "scripts": {
     "start": "nodemon app.js --exec babel-node"
   },
@@ -21,6 +20,7 @@
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.0",
-    "@babel/preset-env": "^7.16.0"
+    "@babel/preset-env": "^7.16.0",
+    "nodemon": "^2.0.15"
   }
 }
