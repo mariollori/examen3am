@@ -1,24 +1,24 @@
  
-var express = require('express');
-var logger = require('morgan');
+import express, { json } from 'express';
+import logger from 'morgan';
 
-var cors = require("cors");
-var alumno = require('./routes/alumno.router');
-var escuela = require('./routes/escuela.route');
+import cors from "cors";
+import user from './routes/auth.router';
+import post from './routes/post.route';
 
 var app = express();
 
 //Dependencias
 app.use(logger('dev'));
-app.use(express.json());
+app.use(json());
 app.use(cors());
 
 // Rutas
-app.use('/', escuela);
-app.use('/alumnos', alumno);
+app.use('/auth', user);
+app.use('/posts', post);
 
 //Database
-const { pg } = require("./database");
+import { pg } from "./database";
 
 app.listen(process.env.PORT || 5080);
 
